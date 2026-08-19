@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Counter App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- React Library from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Load components WITHOUT auto-rendering (data-component strips the render call) -->
+    <script type="text/babel" data-presets="react" src="../ComponentsClass/ReactProbs.jsx"></script>
+    <script type="text/babel" data-presets="react" src="../ComponentsClass/ToggelComponent.jsx"></script>
+    <script type="text/babel" data-presets="react" src="../ComponentsClass/InputFieldPreview.jsx"></script>
+    <script type="text/babel" data-presets="react" src="../ComponentsClass/CharacterCounter.jsx"></script>
+    <script type="text/babel" data-presets="react" src="../ComponentsClass/ToDoApp.jsx"></script>
+    <script type="text/babel" data-presets="react" src="../ComponentsClass/Search.jsx"></script>
+    <script type="text/babel" data-presets="react" src="../ComponentsClass/FetchUser.jsx"></script>
+
+    <!-- Main App with tab navigation -->
+    <script type="text/babel">
+        function App() {
+            const [view, setView] = React.useState('counter');
+
+            const tabStyle = (active) => ({
+                padding: '10px 20px',
+                margin: '0 5px',
+                border: 'none',
+                borderRadius: '8px 8px 0 0',
+                cursor: 'pointer',
+                background: active ? '#fff' : 'rgba(255,255,255,0.5)',
+                fontWeight: 'bold',
+                fontSize: '1rem',
+            });
+
+            // Pick which component to show based on current view
+            const renderView = () => {
+                if (view === 'counter') return <CounterApp />;
+                if (view === 'toggle')  return <ToggleComponent />;
+                if (view === 'preview') return <AppPreview />;
+                if (view === 'charCounter') return <CharacterCounter />;
+                if (view === 'todo') return <ToDoApp />;
+                if (view === 'search') return <SearchFilter />;
+                if (view === 'users') return <Users />;
+                return null;
+            };
+
+            return (
+                <div>
+                    <div style={{
+                        position: 'fixed', top: 10, left: '50%',
+                        transform: 'translateX(-50%)', zIndex: 1000
+                    }}>
+                        <button style={tabStyle(view === 'counter')}
+                                onClick={() => setView('counter')}>📊 Counter</button>
+                        <button style={tabStyle(view === 'toggle')}
+                                onClick={() => setView('toggle')}>🔘 Toggle</button>
+                        <button style={tabStyle(view === 'preview')}
+                                onClick={() => setView('preview')}>👁 Preview</button>
+                        <button style={tabStyle(view === 'charCounter')}
+                                onClick={() => setView('charCounter')}>👁 Char Counter</button>
+                        <button style={tabStyle(view === 'todo')}
+                                onClick={() => setView('todo')}>👁 todo</button>
+                        <button style={tabStyle(view === 'search')}
+                                onClick={() => setView('search')}>👁 search</button>
+                        <button style={tabStyle(view === 'users')}
+                                onClick={() => setView('users')}>👁 users</button>
+                    </div>
+                    {renderView()}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>
+

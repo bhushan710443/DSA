@@ -1,0 +1,19 @@
+{
+  "name": "react-counter-app",
+  "version": "1.0.0",
+  "description": "A simple React counter app that counts numbers",
+  "main": "ComponentsClass/ReactProbs.jsx",
+  "scripts": {
+    "start": "npx http-server . -p 8000",
+    "test": "echo \"No tests configured yet\""
+  },
+  "keywords": [
+    "react",
+    "counter",
+    "learning"
+  ],
+  "author": "Student",
+  "license": "MIT",
+  "devDependencies": {}
+}
+
