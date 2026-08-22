@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Very Important Question 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .screen {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .greeting {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: bounce 0.6s ease-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .subtitle {
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .yes-btn:hover {
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+        }
+
+        .no-btn {
+            background: #ffb3ba;
+            color: #8B0000;
+            position: absolute;
+            box-shadow: 0 5px 15px rgba(255, 179, 186, 0.4);
+        }
+
+        .no-btn:hover {
+            box-shadow: 0 8px 20px rgba(255, 179, 186, 0.6);
+        }
+
+        .success-screen {
+            text-align: center;
+        }
+
+        .heart {
+            font-size: 80px;
+            margin: 20px 0;
+            animation: heartBeat 0.6s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        .success-text {
+            font-size: 32px;
+            color: #667eea;
+            font-weight: 700;
+            margin: 30px 0;
+        }
+
+        .date-info {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .date-info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
+            animation: blink 1.5s infinite;
+            margin: 0 3px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .greeting {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .success-text {
+                font-size: 24px;
+            }
+
+            .heart {
+                font-size: 60px;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff69b4;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="starContainer"></div>
+
+    <div class="container">
+        <!-- Screen 1: Landing -->
+        <div class="screen active" id="screen1">
+            <div class="greeting">Hey Soniya ❤️</div>
+            <p>I have a very important question for you…</p>
+        </div>
+
+        <!-- Screen 2: Dinner Invitation -->
+        <div class="screen" id="screen2">
+            <div class="greeting">🥰</div>
+            <h1>Soniya, will you go out for dinner with me?</h1>
+            <p class="subtitle">Just us, good food, and great company</p>
+            
+            <div class="button-group">
+                <button class="btn yes-btn" onclick="showVenueInvitation()">Yes ❤️</button>
+                <div style="position: relative; width: 140px; height: 60px;">
+                    <button class="btn no-btn" id="noBtn">No 😭</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2.5: Venue Invitation -->
+        <div class="screen" id="screen2-5">
+            <div class="greeting">💝</div>
+            <h1>Soniya's Dinner Invitation</h1>
+            <p style="font-size: 18px; margin: 20px 0; font-weight: 600;">You're Invited! 🎉</p>
+            
+            <div class="date-info">
+                <p><strong>📅 Date:</strong> Saturday, August 22, 2026</p>
+                <p><strong>🕖 Time:</strong> 7:00 PM</p>
+                <p><strong>📍 Venue:</strong> Your Favorite Restaurant</p>
+                <p><strong>👕 Dress Code:</strong> Smart Casual</p>
+                <p><strong>💌 From:</strong> Someone who cares about you ❤️</p>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 16px; color: #667eea; font-weight: 600;">Can't wait to spend time with you, Soniya! 💕</p>
+            
+            <button class="btn yes-btn" style="margin-top: 30px;" onclick="showSuccess()">Got It! 🥰</button>
+        </div>
+
+        <!-- Screen 3: Playful No Response -->
+        <div class="screen" id="screen3">
+            <div class="greeting">🥺</div>
+            <h1>Soniya, are you sure?</h1>
+            <p>Let me ask again…</p>
+            
+            <div class="button-group">
+                <button class="btn yes-btn" onclick="showSuccess()">Yes! 🥰</button>
+                <button class="btn no-btn" onclick="showPlayfulNo()">Still No 😒</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Playful Final No -->
+        <div class="screen" id="screen4">
+            <div class="greeting">😂</div>
+            <h1>Soniya, okay, I believe you!</h1>
+            <p>But we both know you secretly said yes 💕</p>
+            <button class="btn yes-btn" style="margin-top: 30px;" onclick="showSuccess()">Actually, YES! ❤️</button>
+        </div>
+
+        <!-- Screen 5: Success -->
+        <div class="screen success-screen" id="screen5">
+            <div class="heart">❤️</div>
+            <div class="success-text">YAYYY Soniya! 🎉</div>
+            <p style="font-size: 20px; margin: 20px 0;">Dinner date it is!</p>
+            
+            <div class="date-info">
+                <p><strong>📅 Date:</strong> <span id="dateText">Let's pick a day soon!</span></p>
+                <p><strong>🕖 Time:</strong> <span id="timeText">Your favorite time</span></p>
+                <p><strong>📍 Place:</strong> <span id="placeText">Your favorite restaurant</span></p>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 18px; color: #667eea; font-weight: 600;">Soniya, can't wait to see you! 💕</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate stars
+        function generateStars() {
+            const starContainer = document.getElementById('starContainer');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starContainer.appendChild(star);
+            }
+        }
+
+        // Screen navigation
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        // Click Yes button - show venue invitation
+        function showVenueInvitation() {
+            showScreen('screen2-5');
+        }
+
+        // Move No button - works on desktop AND mobile
+        function moveNoButton(e) {
+            const noBtn = document.getElementById('noBtn');
+            if (e) e.preventDefault();
+            
+            // Generate random position
+            const randomX = Math.random() * 250 - 125;
+            const randomY = Math.random() * 250 - 125;
+            
+            noBtn.style.transition = 'all 0.15s ease-out';
+            noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        // Initialize No button with ALL event listeners
+        function initNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            if (!noBtn) return;
+
+            // Mouse events
+            noBtn.addEventListener('mouseenter', moveNoButton);
+            noBtn.addEventListener('mousemove', moveNoButton);
+
+            // Touch events (for mobile)
+            noBtn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                moveNoButton();
+            });
+
+            noBtn.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                moveNoButton();
+            });
+
+            // Pointer events (fallback for all devices)
+            noBtn.addEventListener('pointerenter', moveNoButton);
+            noBtn.addEventListener('pointermove', moveNoButton);
+
+            // Click event - also move button before handling
+            noBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                moveNoButton();
+            });
+
+            // Prevent accidental clicks
+            noBtn.style.pointerEvents = 'auto';
+        }
+
+        // Click No button (first time)
+        function handleNo() {
+            showScreen('screen3');
+        }
+
+        // Click No button (second time)
+        function showPlayfulNo() {
+            showScreen('screen4');
+        }
+
+        // Show success screen
+        function showSuccess() {
+            createConfetti();
+            showScreen('screen5');
+        }
+
+        // Remove duplicate handleYes function
+        // (already defined above as showVenueInvitation)
+
+        // Confetti effect
+        function createConfetti() {
+            const confettiCount = 50;
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.background = ['#ff69b4', '#ff1493', '#ffb6c1', '#ffc0cb', '#ee82ee'][Math.floor(Math.random() * 5)];
+                confetti.style.animation = `fall ${2 + Math.random() * 2}s linear forwards`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+
+        // Confetti animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize
+        generateStars();
+        initNoButton();
+
+        // Auto-advance from screen 1 to screen 2
+        setTimeout(() => {
+            showScreen('screen2');
+            initNoButton(); // Re-initialize after screen changes
+        }, 2500);
+    </script>
+</body>
+</html>
