@@ -15,8 +15,7 @@ public class SlidingWindow {
         int[] list2 = {2, 1, 3, 5, 1};
 
         System.out.println(Arrays.toString(productOfArrayExceptSelf(list2)));
-        System.out.println(maxSumOfSubArray(list1));
-        System.out.println(maxSum(list,4));
+        System.out.println(maxSumOfSubArray(list,4));
         System.out.println(maxConsucutive(list,3, 9));
     }
 
@@ -32,18 +31,12 @@ public class SlidingWindow {
         return arr;
     }
 
-    public static int maxSumOfSubArray(int[] arr){
-        int curr=0;
-        int max=0;
-        for(int a : arr){
-            curr=Math.max(a,curr+a);
-            max=Math.max(max, curr);
-        }
-        return max;
-    }
+
+//    int[] list1 = {-2, 1, -3, 5, 1, -6, 1, 2, 2, 4, -5};
+    // incomplete
 
 
-    public static List maxSum(int[] arr, int maxVal){
+    public static List maxSumOfSubArray(int[] arr, int maxVal){
         ArrayList<Integer> subArr=new ArrayList<>();
 
         int sum=0;

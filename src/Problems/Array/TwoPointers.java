@@ -2,18 +2,44 @@ package Problems.Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class TwoPointers {
 
     public static void main(String[] args){
         int[] list1 = {1, 2, 4, 5, 6, 7, 8, 9, 10};
         int[] list  = {2, 2, 3, 4, 2, 5, 1, 2, 3, 4, 5};
+
         System.out.println(twoSumSorted(list1, 10));
         System.out.println(Arrays.toString(reverseArray(list)));
         System.out.println(maxWaterContainer(list));
+
+        //find max substring with not repeating subarray
+        System.out.println(maxNonRepeatingCharSubString("abcdabcdrghssaa"));
+
     }
 
-    // 1. Two Sum - Sorted Array
+    //find max substring with not repeating subarray
+    public static String maxNonRepeatingCharSubString(String s) {
+
+       char[] ch= s.toCharArray();
+
+       int left=0;
+       int pointer=0;
+        HashMap<Character, Integer> map= new HashMap<>();
+
+         while(pointer<ch.length){
+             map.put(ch[left],1);
+             if(map.containsKey(ch[left])){
+             }
+         }
+
+        return null;
+    }
+
+
+
+        // 1. Two Sum - Sorted Array
     // Given a sorted array, find two numbers that add up to target.
     // Returns the 1-based indices of the two numbers, or null if not found.
     // Time: O(n), Space: O(1)
@@ -56,7 +82,7 @@ public class TwoPointers {
 
     // 3. Is Palindrome
     // Checks if a string is a palindrome (ignores non-alphanumeric characters, case-insensitive).
-    // Time: O(n), Space: O(1)
+    // Time: O(n), Space: O(
     public static boolean isPalindrome(String s) {
         int left = 0, right = s.length() - 1;
 

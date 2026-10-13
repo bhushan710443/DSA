@@ -1,6 +1,5 @@
 package Problems.Array;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,11 +8,35 @@ public class ArrayProbs {
 
     public static void main(String[] args){
         int[] arr = {2, 2, 3, 4, 2, 5, 1, 2, 3, 50, 5};
-        int[] arr1 = {2,7,11,15};
+        int[] arr1 = {12,7,11,13};
         int[] arr2 = {1,2,3,4};
-        System.out.println(robbersProb(arr));
+        int[] arr3 = {1,2,-1,2,3,-2,4};
+
+        System.out.println(robbersProb(arr1));
         System.out.println(Arrays.toString(twoSum(arr1, 9)));
         System.out.println(Arrays.toString(multiplyByothersNotItself(arr2)));
+        System.out.println(Arrays.toString(twoSumForSubArray(arr3, 2)));
+
+    }
+
+    //Two Sum
+    public static int[] twoSumForSubArray(int[] arr, int target) {
+
+//      {1,2,-1,2,3,-2,4};
+        Map<Integer, Integer> map= new HashMap<>();
+        int sum=0;
+        int count=0;
+        map.put(0,1);
+
+        for(int a: arr){
+
+            sum=sum+a;
+            if(map.containsKey(sum-target)){
+                count=count+ map.get(sum-target);
+            }
+            map.put(sum,a);
+        }
+        return null;
     }
 
     // do not use division
@@ -40,6 +63,7 @@ public class ArrayProbs {
     // robbers prob
     // you can not rob adjacent house
     // find maxAmount he can rob
+    // int[] arr1 = {12,7,11,13};
     public static int robbersProb(int[] arr) {
         if (arr.length == 0) return 0;
         if (arr.length == 1) return arr[0];
@@ -72,6 +96,5 @@ public class ArrayProbs {
         }
         return arrr;
     }
-
 
 }

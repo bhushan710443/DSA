@@ -6,6 +6,7 @@ public class ArrayProb {
 
     public static void main(String[] args){
         int[] arr = {2, 2, 3, 4, 2, 5, 1, 2, 3, 4, 5};
+
         System.out.println(kthLargest(arr, 1));
         System.out.println(findDuplicates(arr));
         System.out.println(findNthDuplicates(arr, 2));

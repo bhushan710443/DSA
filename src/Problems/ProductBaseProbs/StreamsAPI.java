@@ -85,8 +85,7 @@ public class StreamsAPI {
                        .collect(Collectors.groupingBy(
                                Employee::getDept,
                                Collectors.collectingAndThen(
-                                       Collectors.maxBy(
-                                               Comparator.comparing(Employee::getSal)
+                                       Collectors.maxBy(Comparator.comparing(Employee::getSal)
                                        ), Optional::get
                                )
                        ));

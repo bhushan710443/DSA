@@ -2,7 +2,10 @@ package Problems.ProductBaseProbs;
 
 import java.util.*;
 
-public class Array {
+public class
+
+
+Array {
 
     public static void main(String[] args) {
 
@@ -88,7 +91,7 @@ public class Array {
     }
 
 //    {4, 2, 3, 1, 7}
-    public static void longestConsecutiveSequence(int[] nums) {
+    public static void  longestConsecutiveSequence(int[] nums) {
 
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {

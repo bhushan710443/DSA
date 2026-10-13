@@ -190,7 +190,7 @@ public class Sorting {
     }
 
    //selectionSort o(n^2)
-    public static int[] selectionSort(int[] arr){
+    public static int[]  selectionSort(int[] arr){
         int i=0;
         while(i < arr.length){
             for (int j=(i+1);j < arr.length;j++) {
