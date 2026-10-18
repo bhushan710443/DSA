@@ -54,6 +54,8 @@ public class MediumDP {
                 }
             }
         }
+
+
         return dp[amount] > amount ? -1 : dp[amount];
     }
 

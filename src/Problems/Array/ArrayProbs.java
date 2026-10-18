@@ -1,8 +1,6 @@
 package Problems.Array;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ArrayProbs {
 
@@ -11,9 +9,12 @@ public class ArrayProbs {
         int[] arr1 = {12,7,11,13};
         int[] arr2 = {1,2,3,4};
         int[] arr3 = {1,2,-1,2,3,-2,4};
+        int[] arr4 = {1,2,-1,2,3, 26, 24};
 
         System.out.println(robbersProb(arr1));
-        System.out.println(Arrays.toString(twoSum(arr1, 9)));
+
+        System.out.println(Arrays.deepToString(new List[]{twoSum(arr4, 25)}));
+
         System.out.println(Arrays.toString(multiplyByothersNotItself(arr2)));
         System.out.println(Arrays.toString(twoSumForSubArray(arr3, 2)));
 
@@ -80,21 +81,20 @@ public class ArrayProbs {
     }
 
     //Two Sum
-    public static int[] twoSum(int[] arr, int target) {
+    public static List<List<Integer>> twoSum(int[] arr, int target) {
 
         //[2,3,11,15,7]
-        int [] arrr=new int[2];
+        List<List<Integer>> list= new ArrayList<>();
         Map<Integer, Integer> map= new HashMap<>();
 
-        for(int a: arr){
-            int key=target-a;
-            map.put(key,a);
-            if (map.containsKey(a)) {
-                arrr[0]=a;
-                arrr[1]=map.get(a);
+        for(int num: arr){
+            int key=target-num;
+            map.put(key,num);
+            if (map.containsKey(num)) {
+               list.add(List.of(map.get(num),num));
             }
         }
-        return arrr;
+        return list;
     }
 
 }

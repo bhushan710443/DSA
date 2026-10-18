@@ -18,6 +18,7 @@ public class ReverseStrings {
         return reversed.toString();
     }
 
+    //output Bhushan Am I Hello
     public static String shuffalString(String str) {
         String[] words = str.split(" ");
         StringBuilder reversed = new StringBuilder();
@@ -30,6 +31,7 @@ public class ReverseStrings {
         return reversed.toString();
     }
 
+    //output = olleH I mA nahsuhB
     public static String reverseOnlyWords(String str) {
         String[] words = str.split(" ");
         StringBuilder result = new StringBuilder();

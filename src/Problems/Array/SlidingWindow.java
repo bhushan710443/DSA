@@ -17,6 +17,39 @@ public class SlidingWindow {
         System.out.println(Arrays.toString(productOfArrayExceptSelf(list2)));
         System.out.println(maxSumOfSubArray(list,4));
         System.out.println(maxConsucutive(list,3, 9));
+
+
+        //find max subarray if we change k number of elements
+        int[] nums = {1,1,1,0,0,0,1,1,1,1,0};
+        int k = 2;
+//      Output: 6
+        System.out.println(findMaxSubarray(nums,k));
+    }
+
+    public static int findMaxSubarray(int[] nums, int k){
+        int left = 0;
+        int zeroCount = 0;
+        int maxLength = 0;
+
+        for (int right = 0; right < nums.length; right++) {
+            // Count zeros entering the window.
+            if (nums[right] == 0) {
+                zeroCount++;
+            }
+
+            // Shrink the window if zeros exceed k.
+            while (zeroCount > k) {
+                if (nums[left] == 0) {
+                    zeroCount--;
+                }
+                left++;
+            }
+
+            // Update the maximum valid window length.
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
     }
 
     public static int[] productOfArrayExceptSelf(int[] arr){
@@ -82,25 +115,6 @@ public class SlidingWindow {
 
         return maxSum;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // Find all subarrays of size maxSize whose sum equals maxVal

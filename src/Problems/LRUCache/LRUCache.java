@@ -3,32 +3,32 @@ package Problems.LRUCache;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 //Linked Hash map best example
 
-public class  LRUCache<K, V> extends LinkedHashMap<K, V> {
+public class  LRUCache<K,V> extends LinkedHashMap<K,V>{
 
-    private final int capacity;
+    public static void main(String[] args){
 
-    public LRUCache(int capacity) {
-        super(capacity, 0.75f, true);
-        this.capacity = capacity;
+        LRUCache<String, Integer> lruCache= new LRUCache<>(5, 0.75F);
+        lruCache.put("ABC",1);
+        lruCache.put("A",2);
+        lruCache.put("AB",3);
+        lruCache.put("AC",4);
+        lruCache.put("BC",5);
+        lruCache.put("D",6);
+
+        System.out.println(lruCache);
     }
 
-    @Override
-    protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-        return size() > capacity;
+    private final int initialCapacity;
+
+    public LRUCache(int initialCapacity, float loadFactor) {
+        super(initialCapacity, loadFactor);
+        this.initialCapacity = initialCapacity;
     }
 
-    public static void main(String[] args) {
-
-        LRUCache<Integer, String> cache = new LRUCache<>(3);
-        cache.put(1, "A");
-        cache.put(2, "B");
-        cache.put(3, "C");
-        System.out.println(cache);
-        cache.put(4, "D");
-        System.out.println(cache);
+    public boolean removeEldestEntry(Map.Entry<K, V> remove){
+        return size() > initialCapacity;
     }
 
 

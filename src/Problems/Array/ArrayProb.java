@@ -57,7 +57,8 @@ public class ArrayProb {
             }
         }
         return duplicates;
-    } 
+    }
+
     
     public static Integer findNthDuplicates(int[] arr, int n) {
 
