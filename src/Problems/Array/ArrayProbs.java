@@ -9,11 +9,12 @@ public class ArrayProbs {
         int[] arr1 = {12,7,11,13};
         int[] arr2 = {1,2,3,4};
         int[] arr3 = {1,2,-1,2,3,-2,4};
-        int[] arr4 = {1,2,-1,2,3, 26, 24};
+        int[] arr4 = {1,2,-1,2,3, 26};
 
         System.out.println(robbersProb(arr1));
 
         System.out.println(Arrays.deepToString(new List[]{twoSum(arr4, 25)}));
+        System.out.println(Arrays.deepToString(new List[]{twoSums(arr4, 25)}));
 
         System.out.println(Arrays.toString(multiplyByothersNotItself(arr2)));
         System.out.println(Arrays.toString(twoSumForSubArray(arr3, 2)));
@@ -95,6 +96,30 @@ public class ArrayProbs {
             }
         }
         return list;
+    }
+
+    //Two Sum
+    public static List<Integer> twoSums(int[] arr, int target) {
+
+        //[2,3,11,15,7]
+        Map<Integer, Integer> map= new HashMap<>();
+        int value=0;
+        List<Integer>intr=new ArrayList<>(2);
+
+        for(int a : arr){
+
+           value = target-a;
+            map.put(a,value);
+
+            if(map.containsKey(value)){
+                intr.add(value);
+                intr.add(a);
+            }
+
+        }
+
+
+        return intr;
     }
 
 }

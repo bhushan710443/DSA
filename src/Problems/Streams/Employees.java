@@ -2,18 +2,25 @@ package Problems.Streams;
 
 public class Employees {
 
+
+    private int id;
     private String name;
     private String address;
     private int age;
     private int salary;
-    private String designation;
+    private String department;
 
-    public Employees(String name, String address, int age, int salary, String designation) {
+    public int getId() {
+        return id;
+    }
+
+    public Employees(int id, String name, String address, int age, int salary, String department) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.age = age;
         this.salary = salary;
-        this.designation = designation;
+        this.department = department;
     }
 
     public String getName() {
@@ -47,7 +54,19 @@ public class Employees {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-    public String getDesignation() {
-        return designation;
+    public String getDepart() {
+        return department;
+    }
+
+    @Override
+    public String toString() {
+        return "Employees{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                ", department='" + department + '\'' +
+                '}';
     }
 }

@@ -35,13 +35,12 @@ public class StreamsStrings {
         sortStringsByLength(txt);
         sortStringsByLengthInReverse(txt);
 
-
-
+        String[] arr= {"India", "is", "my", "country", "I", "Love", "India", "India", "Country"};
+        findWordsContainingUniqueCharacters(arr);
     }
 
 
     public static String findDublicateChar(String str){
-
 
         return str.chars()
                 .mapToObj(a -> (char) a)
@@ -156,5 +155,16 @@ public class StreamsStrings {
          Arrays.stream(str.split(" "))
                  .sorted(Comparator.comparingInt(String::length).reversed())
                  .forEach(System.out::println);
+    }
+
+
+    // Find words containing only unique characters.
+    public static void findWordsContainingUniqueCharacters(String[] arr){
+
+            List<String> arrr= Arrays.stream(arr)
+                    .map(String::toUpperCase)
+                    .filter(word-> word.chars().distinct().count()==word.length())
+                    .toList();
+            System.out.println(arrr.toString());
     }
 }
