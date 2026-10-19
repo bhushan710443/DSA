@@ -15,8 +15,8 @@ public class ArrayProbs {
 
         System.out.println(Arrays.deepToString(new List[]{twoSum(arr4, 25)}));
         System.out.println(Arrays.deepToString(new List[]{twoSums(arr4, 25)}));
-
-        System.out.println(Arrays.toString(multiplyByothersNotItself(arr2)));
+        System.out.println("Multiply By Others Not Itself");
+        System.out.println(Arrays.toString(multiplyByOthersNotItself(arr2)));
         System.out.println(Arrays.toString(twoSumForSubArray(arr3, 2)));
 
     }
@@ -42,24 +42,26 @@ public class ArrayProbs {
     }
 
     // do not use division
-    public static int[] multiplyByothersNotItself(int[] nums) {
-        int n = nums.length;
-        int[] result = new int[n];
+    // int[] arr2 = {1,2,3,4};
+    public static int[] multiplyByOthersNotItself(int[] arr) {
 
-        // Prefix products
-        result[0] = 1;
-        for (int i = 1; i < n; i++) {
-            result[i] = result[i - 1] * nums[i - 1];
+        int[] left = new int[arr.length];
+        int[] right = new int[arr.length];
+        int leftProduct=1;
+
+
+        for(int i=0;i<arr.length;i++){
+            left[i]=leftProduct;
+            leftProduct=leftProduct*arr[i];
         }
 
-        // Suffix products
-        int suffix = 1;
-        for (int i = n - 1; i >= 0; i--) {
-           result[i]= result[i] * suffix;
-           suffix= suffix* nums[i];
+        int rightProduct=1;
+        for(int j= arr.length-1; j>=0; j--){
+            right[j]= rightProduct * left[j];
+            rightProduct=rightProduct*arr[j];
         }
 
-        return result;
+        return right;
     }
 
     // robbers prob
@@ -106,19 +108,17 @@ public class ArrayProbs {
         int value=0;
         List<Integer>intr=new ArrayList<>(2);
 
-        for(int a : arr){
+        for(int a : arr) {
 
-           value = target-a;
-            map.put(a,value);
+            value = target - a;
+            map.put(a, value);
 
-            if(map.containsKey(value)){
+            if (map.containsKey(value)) {
                 intr.add(value);
                 intr.add(a);
             }
 
         }
-
-
         return intr;
     }
 

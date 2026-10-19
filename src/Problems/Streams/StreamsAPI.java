@@ -46,6 +46,7 @@ public class StreamsAPI {
         System.out.println(findTheSecondHighestPaidEmployeeInEachDepartment(employees));
         System.out.println(findTheDepartmentWithTheHighestNumberOfEmployees(employees));
         System.out.println(findEmployeesWhoseSalaryIsGreaterThanAverageSalary(employees));
+        System.out.println(findEmployeesWhoseNamesStartWithA(employees));
     }
 
     //    Find the top three highest-paid employees in each department.
@@ -234,6 +235,15 @@ public class StreamsAPI {
         return emp.stream()
                 .filter(employees -> employees.getSalary()>avg)
                 .toList();
+    }
+
+    //Find employees whose names start with "A".
+    public static List<Employees> findEmployeesWhoseNamesStartWithA(List<Employees> emp) {
+
+        return emp.stream()
+                .filter(employees -> employees.getName().startsWith("A"))
+                .toList();
+
     }
 
 

@@ -107,12 +107,18 @@ public class StreamsStrings {
         return map;
     }
 
+
+    //        // find the words with more than 5 unique caracters with streams
+    //        // all the words should be in upper case
+//    String txt="Bhushan Dattatrya Varpe Is my name And I am Java Developer";
+
     public static void write(String str){
+        System.out.println("START");
         Arrays.stream(str.split(" "))
-                .filter(word ->  word.chars().distinct().count()>=5)
-                .map(String :: toUpperCase)
-                .toList()
+                .filter(word->word.chars().distinct().count()>=5)
+                .map(String::toUpperCase)
                 .forEach(System.out::println);
+        System.out.println("END");
     }
 
     // find max salary of employee

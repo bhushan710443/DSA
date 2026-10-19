@@ -10,6 +10,7 @@ public class ArrayRotate {
         System.out.println(Arrays.toString(rotateArrayByK(arr, 4)));
     }
 
+
     // 3 reverse tecq first reverse all
     // reverse first k
     // then reverse remaining
@@ -35,6 +36,9 @@ public class ArrayRotate {
 
         return nums;
     }
+
+
+
 
 
 }

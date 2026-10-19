@@ -5,9 +5,10 @@ import java.util.*;
 public class ArrayProb {
 
     public static void main(String[] args){
-        int[] arr = {2, 2, 3, 4, 2, 5, 1, 2, 3, 4, 5};
+        int[] arr = { 1, 2, 2, 3, 4, 2, 5, 2, 3, 4, 5};
 
         System.out.println(kthLargest(arr, 1));
+        System.out.println(findDuplicate(arr));
         System.out.println(findDuplicates(arr));
         System.out.println(findNthDuplicates(arr, 2));
         System.out.println(findLuhn());
@@ -32,13 +33,13 @@ public class ArrayProb {
         Set<Integer> ar = new HashSet<>();
 
         for(Integer i : arr){
-            ar.add(i);
-        }
-        for(Integer i : arr){
+
             if(ar.contains(i)){
                 duplicates.add(i);
             }
+            ar.add(i);
         }
+
         return duplicates;
     }
 
