@@ -7,11 +7,14 @@ import java.util.Map;
 public class StringsProblem {
 
     public static void main(String[] args) {
-        String str = "Hello I Am Bhushan";
-        System.out.println(topKFrequentChars(str, 3));
+
+        String[] arr = {"a","a","b","b","c","c","c"};
+
+        System.out.println(compressString(arr));
+
     }
 
-    public static String topKFrequentChars(String str, int K) {
+    public static String[] compressString(String[] str) {
 
         return str;
     }

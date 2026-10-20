@@ -10,15 +10,54 @@ public class CollidalProblem {
         String str= "3[a2[c]]"; //accaccacc
         System.out.println(findString(str));
 
+        String str1= "3[a]2[bc]"; //aaabcbc
+        System.out.println(findFinalString(str1));
 
         int[] arr= {2,4,-1,3,5,-3,4};
         System.out.println(findRemainingElementsAfterCollid(arr));
     }
 
+    private static String findFinalString(String str) {
+
+        char[] ch = str.toCharArray();
+        Stack<Integer> integers=new Stack<>();
+        Stack<StringBuilder> characters=new Stack<>();
+        int currentNumber=0;
+        StringBuilder current= new StringBuilder();
+
+        for(char c: ch){
+            if(Character.isDigit(c)){
+                currentNumber = currentNumber * 10 + (c - '0');
+            }
+
+            else if (c =='['){
+                   integers.push(currentNumber);
+                   characters.push(current);
+                   currentNumber=0;
+                   current= new StringBuilder("");
+
+            } else if (c==']') {
+
+               int num= integers.pop();
+               StringBuilder sb= characters.pop();
+
+               for(int i=0; i<num;i++){
+                   sb.append(current);
+               }
+                current=sb;
+            }
+
+            else {
+                current.append(c);
+            }
+
+        }
+
+        return current.toString();
+    }
 
 
-
-public static String findString(String str){
+    public static String findString(String str){
 
     Stack<Integer> noStack=  new Stack<>();
     Stack<String> charStack=  new Stack<>();
@@ -33,7 +72,7 @@ public static String findString(String str){
             currentNumber = currentNumber * 10 + (ch - '0');
         }
 
-        else if(ch=='['){
+        else if(ch == '['){
             noStack.push(currentNumber);
             charStack.push(currentString);
             currentNumber = 0;
@@ -73,33 +112,27 @@ public static String findString(String str){
 
         Stack<Integer> stack=new Stack<>();
 
-        for(int i=0; i< arr.length ; i++){
+        for(int i=0; i< arr.length ; i++) {
 
-            if(arr[i]> stack.peek()){
-                int n=stack.peek();
+            if (arr[i] > stack.peek()) {
+                int n = stack.peek();
                 if (Math.signum(arr[i]) == -1) {
-                   stack.push(arr[i]-n);
-                }else{
-                    stack.push(n+arr[i]);
+                    stack.push(arr[i] - n);
+                } else {
+                    stack.push(n + arr[i]);
                 }
 
-            } else if(arr[i] < stack.peek()) {
-                int n=stack.peek();
+            } else if (arr[i] < stack.peek()) {
+                int n = stack.peek();
                 if (Math.signum(arr[i]) == 1) {
-                    stack.push(n-arr[i]);
-                }else{
-                    stack.push(n+arr[i]);
+                    stack.push(n - arr[i]);
+                } else {
+                    stack.push(n + arr[i]);
                 }
-            }else{
+            } else {
                 stack.pop();
             }
-
-
-
         }
-
-
-
         return arr;
     }
 

@@ -10,11 +10,10 @@ Array {
     public static void main(String[] args) {
 
         int[] arr1 = {2, 7, 11, 15};
-        String[] arr2 = {"eat", "tea", "tan", "ate", "nat", "bat"};
 
        twoSum(arr1, 9);
        twoSumPointer(arr1, 15);
-       System.out.println(groupAnagrams(arr2));
+
        productOfArrayExceptSelf(new int[]{1, 2, 3, 4});
        longestConsecutiveSequence(new int[]{4, 2, 3, 1, 7});
        subarraySumEqualsK(new int[]{4, 2, 3, 1, 7},7);
@@ -50,21 +49,7 @@ Array {
     }
 
 
-    public static ArrayList<List<String>> groupAnagrams(String[] strs) {
 
-        Map<String, List<String>> map=new HashMap<>();
-
-        for(String str: strs){
-          char[] charArray = str.toCharArray();
-            Arrays.sort(charArray);
-            String key= new String(charArray);
-            map.putIfAbsent(key, new ArrayList<>());
-            map.get(key).add(str);
-        }
-
-        return new ArrayList<>(map.values());
-
-    }
 
 //  int[] arr1 = {2, 7, 11, 15};
     public static void productOfArrayExceptSelf(int[] nums) {

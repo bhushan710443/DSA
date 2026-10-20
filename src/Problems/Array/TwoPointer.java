@@ -4,10 +4,8 @@ public class TwoPointer {
 
     public static void main(String[] args){
 
-        char[] strs= {'a','a','a','b','b','c'};
-
+        char[] strs= {'a','a','a','b','b','c','c','c'};
         System.out.println(findCount(strs));
-
     }
 
     public static char[] findCount(char[] strs) {
