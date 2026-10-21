@@ -1,4 +1,4 @@
-package LowLevelDesign.BookMyShow.Factory;
+package LowLevelDesign.BookMyShow.Factory.Payment;
 
 import LowLevelDesign.BookMyShow.Entity.Ticket;
 import LowLevelDesign.BookMyShow.Enum.PayMode;

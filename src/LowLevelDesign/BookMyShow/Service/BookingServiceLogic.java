@@ -1,12 +1,14 @@
 package LowLevelDesign.BookMyShow.Service;
 
 import LowLevelDesign.BookMyShow.Entity.BookingDto;
+import LowLevelDesign.BookMyShow.Entity.Seat;
 import LowLevelDesign.BookMyShow.Entity.Ticket;
 import LowLevelDesign.BookMyShow.Repository.BookingRepository;
 import LowLevelDesign.BookMyShow.Strategy.BookingStrategy;
 import LowLevelDesign.BookMyShow.exceptions.AlreadyBookedExcaption;
 import jdk.jshell.Snippet;
 
+import java.util.List;
 import java.util.Random;
 
 public class BookingServiceLogic {
@@ -23,11 +25,10 @@ public class BookingServiceLogic {
     }
 
 
-    public Ticket
-
-    bookTicket(BookingDto bookingDto){
+    public Ticket bookTicket(BookingDto bookingDto){
         Ticket ticket;
         try {
+
             Double price = bookingStrategy.findActualPrice(bookingDto);
             ticket = new Ticket("A12",
                     bookingDto.getTheatorID(),
