@@ -1,0 +1,58 @@
+--Find the total number of employees.
+--
+--
+--
+--Find the maximum salary.
+--
+--
+--
+--Find the minimum salary.
+--
+--
+--
+--Calculate the average salary of all employees.
+--
+--
+--
+--Calculate the total salary paid by the company.
+--
+--
+--
+--Find the number of employees in each department.
+--
+--
+--
+--Find the average salary in each department.
+--
+--
+--
+--Find the maximum salary in each department.
+--
+select * from employees where employee_name= 'Amit Sharma';
+
+--
+--Find departments with more than two employees.
+--
+--
+--
+--Find departments whose average salary is greater than ₹80,000.
+--
+--
+--
+--Find the total salary paid to active employees in each department.
+--
+--
+--
+--Count employees hired in each year.
+--
+--
+--
+--Find the department with the highest average salary.
+--
+--
+--
+--Find the number of active and inactive employees.
+--
+--
+--
+--Find departments where the minimum salary is greater than ₹60,000.

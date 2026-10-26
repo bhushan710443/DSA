@@ -1,0 +1,15 @@
+--101. Explain the difference between WHERE and HAVING.
+--102. Explain DELETE vs TRUNCATE vs DROP.
+--103. Explain DDL, DML, DCL, TCL, and DQL.
+--104. Explain primary keys, foreign keys, unique constraints, and indexes.
+--105. What is a composite index, and when would you use one?
+--106. Why might a query fail to use an index?
+--107. How would you troubleshoot a slow SQL query using EXPLAIN?
+--108. Explain clustered and secondary indexes in MySQL/InnoDB.
+--109. What is database normalization? Explain 1NF, 2NF, and 3NF.
+--110. Explain transactions, ACID properties, and isolation levels.
+--111. What are dirty reads, non-repeatable reads, and phantom reads?
+--112. How do you handle deadlocks?
+--113. How do you paginate a large result set efficiently?
+--114. What is the difference between UNION and UNION ALL?
+--115. Explain EXISTS vs IN and when each can be useful.

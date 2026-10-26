@@ -1,0 +1,57 @@
+--Display all employees.
+select * from employees;
+--
+--
+--Display employee names and salaries only.
+--
+--
+--
+--Find employees whose salary is greater than ₹80,000.
+--
+--
+--
+--Find employees whose salary is between ₹60,000 and ₹100,000.
+--
+--
+--
+--Find employees who belong to the Engineering department.
+--
+--
+--
+--Find employees who live in Bangalore.
+--
+--
+--
+--Find employees whose names start with A.
+--
+--
+--
+--Find employees whose names contain a.
+--
+--
+--
+--Display employees in descending order of salary.
+--
+--
+--
+--Display the top 5 highest-paid employees.
+--
+--
+--
+--Find employees whose status is ACTIVE.
+--
+--
+--
+--Find employees who do not belong to any department.
+--
+--
+--
+--Find employees hired after January 1, 2022.
+--
+--
+--
+--Find employees whose salary is not equal to ₹90,000.
+--
+--
+--
+--Display unique employee cities.

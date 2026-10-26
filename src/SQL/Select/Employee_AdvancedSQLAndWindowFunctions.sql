@@ -1,0 +1,39 @@
+--Calculate a running total of salaries ordered by employee ID.
+
+select * from employees;
+
+--
+--
+--Calculate a running total of salaries within each department.
+--
+--
+--
+--Calculate each employee's percentage contribution to total company salaries.
+--
+--
+--
+--Find the difference between each employee's salary and the department average.
+--
+--
+--
+--Use LAG() to compare an employee's salary with the previous row.
+--
+--
+--
+--Use LEAD() to display the next employee's salary.
+--
+--
+--
+--Divide employees into four salary groups using NTILE(4).
+--
+--
+--
+--Find the highest and second-highest salary using conditional aggregation.
+--
+--
+--
+--Find the median salary.
+--
+--
+--
+--Find the highest-paid employee in each department without using window functions.

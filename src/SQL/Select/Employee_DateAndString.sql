@@ -1,0 +1,37 @@
+--Find employees with more than five years of service.
+--
+--
+--
+--Find employees hired in the current year.
+--
+--
+--
+--Find employees hired in the last 90 days.
+--
+--
+--
+--Calculate employee tenure in years and months.
+--
+--
+--
+--Find the oldest employee by hire date.
+--
+--
+--
+--Extract the year and month from hire_date.
+--
+--
+--
+--Find employees hired in the same month.
+--
+--
+--
+--Convert employee names to uppercase.
+--
+--
+--
+--Find the length of each employee's name.
+--
+--
+--
+--Concatenate employee name and department name into one column.

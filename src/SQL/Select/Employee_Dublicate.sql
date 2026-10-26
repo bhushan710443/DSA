@@ -1,0 +1,37 @@
+--Find duplicate employee email addresses.
+--
+--
+--
+--Find duplicate salaries.
+--
+--
+--
+--Find employees who share the same salary within a department.
+--
+--
+--
+--Find duplicate rows based on employee name and department.
+--
+--
+--
+--Delete duplicate records while keeping one record.
+--
+--
+--
+--Find employees with missing email addresses.
+--
+--
+--
+--Find records where the salary is NULL.
+--
+--
+--
+--Replace missing salaries with a default value in the query output.
+--
+--
+--
+--Find employees who have the same salary as another employee.
+--
+--
+--
+--Explain the difference between NULL, zero, and an empty string.

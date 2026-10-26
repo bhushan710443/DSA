@@ -1,0 +1,57 @@
+--Find the second-highest salary.
+--
+--
+--
+--Find the third-highest salary.
+--
+--
+--
+--Find the Nth-highest distinct salary.
+--
+--
+--
+--Find all employees who earn the second-highest salary.
+--
+--
+--
+--Find the highest-paid employee in each department.
+--
+--
+--
+--Find the second-highest-paid employee in each department.
+--
+--
+--
+--Find the top three highest-paid employees in each department.
+--
+--
+--
+--Rank employees by salary using RANK().
+--
+--
+--
+--Rank employees by salary using DENSE_RANK().
+--
+--
+--
+--Assign a unique row number to employees ordered by salary.
+--
+--
+--
+--Find employees earning more than their department's average salary.
+--
+--
+--
+--Find employees earning more than the company's overall average salary.
+--
+--
+--
+--Find departments where multiple employees share the highest salary.
+--
+--
+--
+--Find the top two distinct salary levels in each department.
+--
+--
+--
+--Find employees whose salary is above the previous employee's salary in a salary-sorted result.

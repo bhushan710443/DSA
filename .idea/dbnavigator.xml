@@ -19,6 +19,22 @@
         <tools />
         <mcp-servers />
       </assistant-state>
+      <assistant-state connection-id="virtual-oracle-connection" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
+        <tools />
+        <mcp-servers />
+      </assistant-state>
+      <assistant-state connection-id="virtual-oracle-connection" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
+        <tools />
+        <mcp-servers />
+      </assistant-state>
+      <assistant-state connection-id="virtual-mysql-connection" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
+        <tools />
+        <mcp-servers />
+      </assistant-state>
+      <assistant-state connection-id="virtual-mysql-connection" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
+        <tools />
+        <mcp-servers />
+      </assistant-state>
     </assistants>
     <selection-state>
       <model-selection />
@@ -51,8 +67,9 @@
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/src/SQL/Select/Employee_Select.sql" connection-id="3b1e9c48-dd34-42e3-855b-ccd85775080e" session-id="MAIN" current-schema="mysql" />
     <mapping file-url="file://$PROJECT_DIR$/src/SQL/Create/Employee.sql" connection-id="3b1e9c48-dd34-42e3-855b-ccd85775080e" session-id="MAIN" current-schema="sql_interview" />
+    <mapping file-url="file://$PROJECT_DIR$/src/SQL/Select/Employee_AdvancedSQLAndWindowFunctions.sql" connection-id="3b1e9c48-dd34-42e3-855b-ccd85775080e" session-id="MAIN" current-schema="sql_interview" />
+    <mapping file-url="file://$PROJECT_DIR$/src/SQL/Select/Employee_Aggregate_And_GroupBy.sql" connection-id="3b1e9c48-dd34-42e3-855b-ccd85775080e" session-id="MAIN" current-schema="sql_interview" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
