@@ -57,10 +57,9 @@ public class ArrayProbs {
 
         int rightProduct=1;
         for(int j= arr.length-1; j>=0; j--){
-            right[j]= rightProduct * left[j];
-            rightProduct=rightProduct*arr[j];
+            right[j] = rightProduct * left[j];
+            rightProduct=rightProduct * arr[j];
         }
-
         return right;
     }
 

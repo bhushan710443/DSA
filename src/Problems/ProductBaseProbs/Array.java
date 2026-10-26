@@ -16,7 +16,7 @@ Array {
 
        productOfArrayExceptSelf(new int[]{1, 2, 3, 4});
        longestConsecutiveSequence(new int[]{4, 2, 3, 1, 7});
-       subarraySumEqualsK(new int[]{4, 2, 3, 1, 7},7);
+        System.out.println("Find the subarray count="+subarraySumEqualsK(new int[]{4, 3, 2, 2, 1, 2, 7},7));
 
     }
 
@@ -99,21 +99,25 @@ Array {
         }
     }
 
-    //    {4, 2, 3, 1, 7}
+    //    {4, 3, 2, 2, 1, 2, 7}
+// Subarray Sum Equals K
+    public static int subarraySumEqualsK(int[] nums, int k) {
 
-    public static void subarraySumEqualsK(int[] nums, int k) {
+        int count=0;
+        Map<Integer, Integer> map= new HashMap<>();
+        int prefixSum=0;
+        int remaining=0;
 
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            map.put(k- nums[i], i );
+        map.put(0, 1);
+
+        for(int n : nums){
+            prefixSum = prefixSum + n;
+            remaining = prefixSum - k;
+
+            count= count + map.getOrDefault(remaining, 0);
+            map.put(prefixSum, map.getOrDefault(prefixSum,0)+1);
         }
-
-        for(int num: nums){
-            if(map.containsKey(num)){
-                System.out.println("Subarray found ending at index: " + nums[map.get(num)]);
-            }
-        }
-
+        return count;
     }
 
 }

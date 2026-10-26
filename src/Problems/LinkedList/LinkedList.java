@@ -1,7 +1,4 @@
 package Problems.LinkedList;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.PriorityQueue;
 
 public class LinkedList {
@@ -304,7 +301,6 @@ public class LinkedList {
         Node tail = dummy;
 
         while(!pq.isEmpty()){
-
             Node smallest = pq.poll();
             // Save the next node before linking
              Node next = smallest.next;
@@ -316,7 +312,6 @@ public class LinkedList {
                 pq.offer(next);
             }
          }
-
         tail.next = null;
 
         return dummy.next;
