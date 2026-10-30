@@ -1,31 +1,14 @@
 --Display all employees.
 select * from employees;
---
---
---Display employee names and salaries only.
---
---
---
---Find employees whose salary is greater than ₹80,000.
---
---
---
+
 --Find employees whose salary is between ₹60,000 and ₹100,000.
---
---
---
---Find employees who belong to the Engineering department.
---
---
---
---Find employees who live in Bangalore.
---
---
---
+select * from employees
+where salary between 60000 AND 100000;
+
 --Find employees whose names start with A.
---
---
---
+select * from employees
+where employee_name like 'A%';
+
 --Find employees whose names contain a.
 --
 --

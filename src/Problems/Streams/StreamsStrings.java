@@ -8,6 +8,11 @@ public class StreamsStrings {
 
     public static void main(String[] args) {
 
+
+
+        String strr = "aabdcc";
+        System.out.println(createList(strr));
+
         String str = "BHUSHANA";
         System.out.println(findDublicateChar(str));
 
@@ -37,6 +42,24 @@ public class StreamsStrings {
 
         String[] arr= {"India", "is", "my", "country", "I", "Love", "India", "India", "Country"};
         findWordsContainingUniqueCharacters(arr);
+    }
+
+
+
+        public static List<List<String>> createList(String str) {
+
+            List<List<String>> result = str.chars()
+                    .mapToObj(c -> String.valueOf((char) c))
+                    .collect(Collectors.groupingBy(
+                            ch -> ch,
+                            LinkedHashMap::new,
+                            Collectors.toList()
+                    ))
+                    .values()
+                    .stream()
+                    .collect(Collectors.toList());
+
+            return result;
     }
 
 
