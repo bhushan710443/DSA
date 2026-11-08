@@ -8,7 +8,6 @@ public class Coins {
         int[] coins = {1, 2, 5};
         System.out.println(findCoinsOutput(coins, 11));
         System.out.println(findCoinsOutputDP(coins, 11));
-
     }
 
 
